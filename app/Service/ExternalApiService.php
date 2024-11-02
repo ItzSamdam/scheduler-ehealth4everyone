@@ -10,7 +10,11 @@ class ExternalApiService
     {
         $cacheKey = 'external_api_data';
         return Cache::remember($cacheKey, now()->addHour(), function () {
-            $response = Http::get('https://api.example.com/data');
+            $response = Http::get('http://api.weatherapi.com/v1/current.json', [
+                // get token from env
+                'key' => env('WEATHER_API_KEY'),
+                'q' => 'london',
+            ]);
             return $response->json();
         });
     }
