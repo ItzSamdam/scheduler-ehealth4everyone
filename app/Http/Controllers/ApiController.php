@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Service\ExternalApiService;
+use App\Services\ExternalApiService;
 
 class ApiController extends Controller
 {

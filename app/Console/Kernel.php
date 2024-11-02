@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         $schedule->call(function () {
             app(ApiLogRepositoryInterface::class)->deleteOldLogs();
-        })->daily();
+        })->everyMinute();
+        //->daily();
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Repository;
+
 use App\Models\ApiLog;
 use App\Interface\ApiLogRepositoryInterface;
 
